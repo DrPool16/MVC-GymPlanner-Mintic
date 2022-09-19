@@ -1,0 +1,80 @@
+root{
+    --color-base-nav: #0c1b39;
+    --color-caja: #DBDBD9;
+    --color-grey: #f5f6f8;
+    --color-grey-xx: #c1c5b9;
+    --color-black: #000000;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    background: url(../img/Pesas_login.png) no-repeat center top;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+.btn{
+    font-weight: 400;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    min-width: 10rem;
+    background: #fff;
+}
+
+.bg-fondo{
+    background-color: #4a4a4a;
+}
+
+.bg-cream{
+    background-color: #0c1b39;
+}
+
+.p-6{
+    padding: 4rem 7rem;
+   }
+
+.contact-box{
+    padding:  3rem;  
+   }   
+
+.form-control{
+    background-color: #333f55;
+    border: 2px solid #333f55;
+    border-radius: .2rem;
+    padding: 1.0rem 1rem;
+   }
+
+.register-bg{
+    display: flex;
+    background-image: url('../img/ejercicio-en-casa.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+   }   
+   
+   .testimonial{
+       bottom: 10px;
+   }
+   
+.contact-box a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #6D6E9D;
+}
+.contact-box a:hover{
+    color: #00327A;
+}
+   
+   @media (max-width: 575.98px){
+       .p-6{
+           padding: 2rem;
+       }
+       .contact-box{
+           padding: 0;
+       }
+       .width-100{
+           width: 100%
+       }
+   }

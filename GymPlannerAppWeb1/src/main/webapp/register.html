@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <script src="https://cdnjs.couldflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/estiloregister.css">
+        <script src="js/index.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #0c1b39;">
+                <!-- Logo -->
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/Logo.png" alt="" width="65" height="60">
+
+                    </a>
+                    <!-- Nav -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header> 
+        <section class="contact-box">
+            <div class="row no-gutters bg-cream">
+                <div class="col-xl-5 col-lg-12 register-bg">
+                    <div class="position-absolute testimonial p-4">
+                        <h3 class="font-weight-bold text-light">GymPlanner</h3>
+                        <p class="lead text-light">Diseña tu rutina a tus necesidades</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-12 d-flex">
+                    <div class="container align-self-center p-6">
+                        <h1 class="font-weight-bold text-light">Crea tu cuenta</h1>
+                        <p class="text-muted mb-5">Ingrese la siguiente información para registrarte</p>
+
+                        <form id="form-register">
+
+                            <div class="form-group mb-3">
+                                <label for="input-username" class="font-weight-bold text-light">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="input-username" placeholder="Ingrese Nombre de Usuario" required>
+                            </div>                               
+
+                            <div class="form-row mb-3">
+                                <div class="form-group col-md-6">
+                                    <label for="input-contrasena" class="font-weight-bold text-light">Contraseña</label>
+                                    <input type="password" class="form-control" id="input-contrasena" placeholder="Contraseña" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="input-contrasena-repeat" class="font-weight-bold text-light">Repetir contraseña</label>
+                                    <input type="password" class="form-control" id="input-contrasena-repeat" placeholder="Confirmar contraseña" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row mb-3">
+                                <div class="form-group col-md-6" >
+                                    <label for="input-nombre" class="font-weight-bold text-light">Nombre</label>
+                                    <input type="text" class="form-control" id = "input-nombre" placeholder="Ingrese su Nombre" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="input-apellidos" class="font-weight-bold text-light">Apellidos</label>                
+                                    <input type="text" class="form-control" id = "input-apellidos" placeholder="Ingrese sus Apellidos" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="input-email" class="font-weight-bold text-light">Correo</label>
+                                <input type="text" class="form-control" id = "input-email" placeholder="Ingrese su Correo" required> 
+                            </div>
+
+                            <div class="form-row mb-3">
+                                <div class="form-group col-md-6">
+                                    <label for="input-sexo" class="font-weight-bold text-light">Sexo</label>
+                                    <input type="text" class="form-control" id = "input-sexo" placeholder="Ingrese su Sexo" required> 
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="input-altura" class="font-weight-bold text-light">Altura</label>
+                                    <input type="text" class="form-control" id = "input-altura" placeholder="Ingrese su altura" required>
+                                </div>
+                            </div>
+                            <div class="form-row mb-3">
+                                <div class="form-group col-md-6">
+                                    <label for="input-peso" class="font-weight-bold text-light">Peso</label>
+                                    <input type="text" class="form-control" id = "input-peso" placeholder="Ingrese su Peso" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="input-actividad_fisica" class="font-weight-bold text-light">Actividad física</label>
+                                    <input type="text" class="form-control" id = "input-actividad_fisica" placeholder="Ingrese su Actividad física" required> 
+                                </div>
+                            </div>
+
+                            <div class="form-row mb-3">
+                                <div class="form-group col-md-6">
+                                    <label for="input-edad" class="font-weight-bold text-light">Edad</label>
+                                    <input type="text" class="form-control" id = "input-edad" placeholder="Ingrese su Edad" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="input-nivel_fisico" class="font-weight-bold text-light">Nivel</label>
+                                    <input type="text" class="form-control" id = "input-nivel_fisico" placeholder="Ingrese su Nivel físico" required>
+                                </div>
+                            </div>
+                            <div class="form-group mb-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label text-muted">Al seleccionar esta casila aceptas nuestro aviso de provaidad y los términos y condiciones</label>
+                                </div>                                
+                            </div>
+                            <input type="submit" id="register-btn" class="btn width-100" value="Registrar usuario" />
+                        </form>
+                        <div id="register-error" class="alert-danger d-none" role="alert"></div>
+                        <a href="#index.html">¿Ya tienes cuenta?, Iniciar Sesión</a>
+                       
+                    </div>
+                </div>
+            </div>    
+        </section>
+
+    </body>
+</html>
