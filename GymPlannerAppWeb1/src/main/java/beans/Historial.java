@@ -21,21 +21,43 @@ public class Historial {
         return id_rutina;
     }
 
+    public void setId_rutina(int id_rutina) {
+        this.id_rutina = id_rutina;
+    }
+
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Date getDia() {
         return dia;
     }
 
+    public void setDia(Date dia) {
+        this.dia = dia;
+    }
+
     public int getNivel() {
         return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
     }
 
     public String getTipo() {
         return tipo;
     }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+        
 
     @Override
     public String toString() {

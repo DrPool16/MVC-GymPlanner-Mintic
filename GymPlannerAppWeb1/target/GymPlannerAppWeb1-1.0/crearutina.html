@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+              integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+              crossorigin="anonymous" />
+
+        <script src="js/crearut.js"></script>
+        <link rel="stylesheet" href="css/estilorut.css" />
+        <title>Crearutina</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #0c1b39;">
+            <!-- Logo -->
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">
+                    <img src="img/Logo.png" alt="" width="65" height="60">
+
+                </a>
+                <!-- Nav -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="" id="navbarNavAltMarkup">
+                    <div class="navbar-nav" id="user-data-profile">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Rutinas</a>
+                        <a class="nav-link" href="#">Historial</a>
+                        <a class="nav-link" href="#" id="user-username"></a>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="ajustes">Ajustes </span>
+                            </button>
+                            <div class="dropdown-menu" id="main-menu">
+                                <a id="mi-perfil-btn" class="dropdown-item">Mi perfil</a>
+                                <a id="salir-btn" class="dropdown-item" href="index.html">Salir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main class="justify-content-center">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col" id="ordenar-rutina" data-toogle="tooltip" 
+                            data-placement="top" title="Ordenar por grupo_muscular">Grupo muscular
+                            <span class="fas fa-sort" id="icono-ordenar"></span></th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Copias disponibles</th>
+                        <th scope="col">Novedad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Reservar</th>
+                    </tr>
+                </thead>
+                <tbody id="rutinas-tbody">
+
+                </tbody>
+            </table>
+        </main>
+
+    </body>
+</html>

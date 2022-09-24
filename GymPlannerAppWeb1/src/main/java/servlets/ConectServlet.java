@@ -33,16 +33,14 @@ public class ConectServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */           
-            String id = request.getParameter("id");
-            String name = request.getParameter("name");
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet ConectServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Bienvenidos a los mamados del GymPlanner</h1>");
-            response.getWriter().append("El id que fue recibido es "+id+ " y el nombre de la pelicula es: "+name); 
+            out.println("<h1>Servlet ConectServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,6 +59,7 @@ public class ConectServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+         System.out.println("Comunicacion realizada");
     }
 
     /**

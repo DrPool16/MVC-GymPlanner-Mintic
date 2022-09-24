@@ -28,6 +28,10 @@ body{
     background-color: #0c1b39;
 }
 
+.bg-light{
+    background-color: #ffffff;
+}
+
 .p-6{
     padding: 4rem 7rem;
    }

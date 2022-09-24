@@ -3,6 +3,7 @@ package controller;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import com.google.gson.Gson;
+
 import beans.Usuario;
 import connection.DBConnection;
 
@@ -60,6 +61,47 @@ public class UsuarioController implements IUsuarioController {
         } finally {
             con.desconectar();
         }
+        return "false";
+    }
+    
+    @Override
+    public String pedir(String username) {
+
+        Gson gson = new Gson();
+
+        DBConnection con = new DBConnection();
+        String sql = "SELECT * FROM usuario WHERE username= '" + username + "'";
+
+        try {
+
+            Statement st = con.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                
+                String contrasena = rs.getString("contrasena");              
+                String nombre = rs.getString("nombre");
+                String apellidos = rs.getString("apellidos");
+                String email = rs.getString("email");
+                String sexo = rs.getString("sexo");
+                double altura = rs.getDouble("altura");
+                double peso = rs.getDouble("peso");
+                int actividad_fisica = rs.getInt("actividad_fisica");
+                int edad = rs.getInt("edad");
+                int nivel_fisico = rs.getInt("nivel_fisico");
+
+                Usuario usuario = new Usuario(username, contrasena, nombre, apellidos, 
+                        email, sexo, altura, peso, actividad_fisica, edad, nivel_fisico);
+
+
+                return gson.toJson(usuario);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+
         return "false";
     }
 }

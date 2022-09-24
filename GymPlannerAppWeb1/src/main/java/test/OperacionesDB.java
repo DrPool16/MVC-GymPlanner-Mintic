@@ -38,9 +38,10 @@ public class OperacionesDB {
                 String ejercicio = rs.getString("ejercicio");
                 String img = rs.getString("img");
                 
-                Rutinas rutinas = new Rutinas(id_rutina, nivel, grupo_muscular, tipo, ejercicio, img);
-                System.out.println(rutinas.toString());
+                Rutinas rutina = new Rutinas(id_rutina, nivel, grupo_muscular, tipo, ejercicio, img);
+                System.out.println(rutina.toString());
             }
+            
             st.executeQuery(sql);
         } catch(Exception ex){
             System.out.println(ex.getMessage());            
