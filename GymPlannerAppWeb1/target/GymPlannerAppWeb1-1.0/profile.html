@@ -22,40 +22,59 @@
     </head>
     <body>
         <header>
-             <!-- Navbar -->
-        <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #0c1b39;">
-            <!-- Logo -->
-            <div class="container-fluid">
+            <!-- Navbar -->
+            <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #0c1b39;">
+                <!-- Logo -->
+                <div class="container-fluid">
 
-                <a class="navbar-brand" href="#">
-                    <img src="img/Logo.png" alt="" width="65" height="60">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/Logo.png" alt="" width="65" height="60">
 
-                </a>
-                <!-- Nav -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="" id="navbarNavAltMarkup">
-                    <div class="navbar-nav" id="user-data-profile">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Rutinas</a>
-                        <a class="nav-link" href="#">Historial</a>
-                        <a class="nav-link" href="#" id="user-username"></a>
-                        <div class="btn-group">
-                            <button type="button" class="btn- btn-block dropdown-toggle bg-light "
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span id="ajustes">Ajustes </span>
-                            </button>
-                            <div class="dropdown-menu" id="main-menu">
-                                <a id="mi-perfil-btn" class="dropdown-item">Mi perfil</a>
-                                <a id="salir-btn" class="dropdown-item" href="index.html">Salir</a>
+                    </a>
+                    <!-- Nav -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="" id="navbarNavAltMarkup">
+                        <div class="navbar-nav" id="user-data-profile">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" href="#">Rutinas</a>
+                            <a class="nav-link" href="#">Historial</a>
+                            <a class="nav-link" href="#" id="user-username"></a>
+                            <div class="btn-group">
+                                <button type="button" class="btn- btn-block dropdown-toggle bg-light "
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span id="ajustes">Ajustes </span>
+                                </button>
+                                <div class="dropdown-menu" id="main-menu">
+                                    <a id="escoger-btn" class="dropdown-item">Mi perfil</a>
+                                    <a id="salir-btn" class="dropdown-item" href="index.html">Salir</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
         </header> 
+        <div class="align-items-center d-flex flex-column p-4">
+            <h1>Historial de Rutinas</h1>
+
+            <table class="table d-none" id="historial-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Ejercicio</th>
+                        <th scope="col">Nivel</th>
+                        <th scope="col">Grupo muscular</th>
+                        <th scope="col">Dia</th>
+                        <th scope="col">Terminar</th>
+                    </tr>
+                </thead>
+                <tbody id="historial-tbody">
+                </tbody>
+            </table>
+            <div id="historial-vacio" class="alert alert-info" role="alert">No hay elementos en el historial</div>
+        </div>
         <section class="contact-box">
             <div class="row no-gutters bg-cream">
                 <div class="col-xl-5 col-lg-12 register-bg">
@@ -80,11 +99,7 @@
                                 <div class="form-group col-md-6">
                                     <label for="input-contrasena" class="font-weight-bold text-light">Contraseña</label>
                                     <input type="password" class="form-control" id="input-contrasena" placeholder="Contraseña" required>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="input-contrasena-repeat" class="font-weight-bold text-light">Repetir contraseña</label>
-                                    <input type="password" class="form-control" id="input-contrasena-repeat" placeholder="Confirmar contraseña" required>
-                                </div>
+                                </div>                                
                             </div>
 
                             <div class="form-row mb-3">
@@ -152,32 +167,32 @@
                             <button class="bg-cream btn btn-danger" id="eliminar-cuenta-btn" data-toggle="modal" 
                                     data-target="#eliminar-cuenta-modal">Eliminar cuenta</button>
                         </div>
-                         <div class="modal fade" id="eliminar-cuenta-modal" tabindex="-1" role="dialog" 
-                         aria-labelledby="eliminar-cuenta-modal-label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-tittle" id="eliminar-cuenta-modal-header">¿Eliminar cuenta?</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Eliminar una cuenta es una acción que no se puede restaurar. ¿Está¡ seguro?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary bg-cream" 
-                                            data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-danger bg-cream" 
-                                            id="aceptar-eliminar-cuenta-btn">Eliminar cuenta</button>
+                        <div class="modal fade" id="eliminar-cuenta-modal" tabindex="-1" role="dialog" 
+                             aria-labelledby="eliminar-cuenta-modal-label" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-tittle" id="eliminar-cuenta-modal-header">¿Eliminar cuenta?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Eliminar una cuenta es una acción que no se puede restaurar. ¿Está¡ seguro?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary bg-cream" 
+                                                data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-danger bg-cream" 
+                                                id="aceptar-eliminar-cuenta-btn">Eliminar cuenta</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     </div>
 
-                   
+
                 </div>
             </div>    
         </section>

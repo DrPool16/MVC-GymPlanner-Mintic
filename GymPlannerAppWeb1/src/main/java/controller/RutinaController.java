@@ -11,10 +11,8 @@ import com.google.gson.Gson;
 import beans.Rutinas;
 import connection.DBConnection;
 
-
 public class RutinaController implements IRutinaController {
-    
-    
+
     @Override
     public String listar(boolean ordenar, String orden) {
 
@@ -42,7 +40,7 @@ public class RutinaController implements IRutinaController {
                 String tipo = rs.getString("tipo");
                 String ejercicio = rs.getString("ejercicio");
                 String img = rs.getString("img");
-                
+
                 Rutinas rutina = new Rutinas(id_rutina, nivel, grupo_muscular, tipo, ejercicio, img);
 
                 rutinas.add(gson.toJson(rutina));
@@ -57,4 +55,51 @@ public class RutinaController implements IRutinaController {
         return gson.toJson(rutinas);
 
     }
+
+    @Override
+    public String terminar(int id_rutina, String username) {
+
+        DBConnection con = new DBConnection();
+
+        String sql = "Delete from historial where id_rutina= "
+                + id_rutina + " and username = '" + username + "' limit 1";
+
+        try {
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql);
+
+            return "true";
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        } finally {
+            con.desconectar();
+        }
+
+        return "false";
+
+    }
+
+    @Override
+    public String sumarCantidad(int id_rutina) {
+
+        DBConnection con = new DBConnection();
+
+        String sql = "Update rutina set nivel = (Select nivel from rutina where id_rutina = "
+                + id_rutina + ") + 1 where id_rutina = " + id_rutina;
+
+        try {
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql);
+
+            return "true";
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        } finally {
+            con.desconectar();
+        }
+
+        return "false";
+
+    }
+
 }

@@ -80,7 +80,7 @@ function mostrarRutinas(rutinas) {
         }
         
         contenido += '<tr><th scope="row">' + rutina.id_rutina + '</th>' +
-                '<td>' + rutina.nivel + '</td>' +
+                //'<td>' + rutina.nivel + '</td>' +
                 '<td>' + rutina.grupo_muscular + '</td>' +
                 '<td>' + rutina.tipo + '</td>' +
                 '<td>' + rutina.ejercicio + '</td>' +
@@ -90,12 +90,12 @@ function mostrarRutinas(rutinas) {
         }
         contenido += '></td>' +
                 '<td>' + niv + '</td>' +
-                '<td><button onclick="alquilarPelicula(' + rutina.id_rutina + ',' + niv + ');" class="btn btn-success" ';
+                '<td><button onclick="selecRutina(' + rutina.id_rutina + ',' + niv + ');" class="btn btn-success" ';
         if (rutina.nivel != 2) {
             contenido += ' disabled ';
         }
 
-        contenido += '>Reservar</button></td></tr>'
+        contenido += '>Escoger</button></td></tr>'
 
 
     });
