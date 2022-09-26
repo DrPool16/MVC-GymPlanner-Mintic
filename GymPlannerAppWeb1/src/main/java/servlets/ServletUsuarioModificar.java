@@ -35,7 +35,6 @@ public class ServletUsuarioModificar extends HttpServlet {
             throws ServletException, IOException {
         // TODO Auto-generated method stub
         UsuarioController usuario = new UsuarioController();
-
         String username = request.getParameter("username");
         String contrasena = request.getParameter("contrasena");
         String nombre = request.getParameter("nombre");
@@ -44,6 +43,7 @@ public class ServletUsuarioModificar extends HttpServlet {
         String sexo = request.getParameter("sexo");
         double altura = Double.parseDouble(request.getParameter("altura"));
         double peso = Double.parseDouble(request.getParameter("peso"));
+        System.out.println(username);
         int actividad_fisica = Integer.parseInt(request.getParameter("actividad_fisica"));
         int edad = Integer.parseInt(request.getParameter("edad"));
         int nivel_fisico = Integer.parseInt(request.getParameter("nivel_fisico"));

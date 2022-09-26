@@ -118,9 +118,9 @@ public class UsuarioController implements IUsuarioController {
         String sql = "Update usuario set contrasena = '" + nuevaContrasena
                 + "', nombre = '" + nuevoNombre + "', "
                 + "apellidos = '" + nuevosApellidos + "', email = '"
-                + nuevoEmail + "', sexo = " + nuevoSexo + "', altura = "
-                + nuevoAltura + "', peso = " + nuevoPeso + "', actividad_fisica = "
-                + nuevoActividad_fisica + "', edad = " + nuevoEdad + "', nivel_fisico = "
+                + nuevoEmail + "', sexo = '" + nuevoSexo + "', altura = "
+                + nuevoAltura + ", peso = " + nuevoPeso + ", actividad_fisica = "
+                + nuevoActividad_fisica + ", edad = " + nuevoEdad + ", nivel_fisico = "
                 + nuevoNivel_fisico;
 
         /*
