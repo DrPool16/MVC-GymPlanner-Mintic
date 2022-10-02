@@ -10,14 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.RutinaController;
+import controller.UsuarioController;
 
 /**
  * Servlet implementation class ServletPeliculaListar
  */
 @WebServlet("/ServletRutinaListar")
 public class ServletRutinaListar extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,34 +28,37 @@ public class ServletRutinaListar extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-                throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		RutinaController rutina = new RutinaController();
-		
-		boolean ordenar = Boolean.parseBoolean(request.getParameter("ordenar"));
-		String orden = request.getParameter("orden");
-		
-		String rutinaStr = rutina.listar(ordenar, orden);
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		
-		out.println(rutinaStr);
-		out.flush();
-		out.close();
-		
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        RutinaController rutina = new RutinaController();
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+        boolean ordenar = Boolean.parseBoolean(request.getParameter("ordenar"));
+        String orden = request.getParameter("orden");
+
+        String rutinaStr = rutina.listar(ordenar, orden);
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        out.println(rutinaStr);
+        out.flush();
+        out.close();
+
+    }
+
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        doGet(request, response);
+    }
 
 }

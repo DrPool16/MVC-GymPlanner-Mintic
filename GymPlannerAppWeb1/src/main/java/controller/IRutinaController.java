@@ -7,4 +7,6 @@ public interface IRutinaController {
     public String terminar(int id_rutina, String username);
     
     public String sumarCantidad(int id_rutina);
+    
+    public String seleccionar(int id_rutina, String username);
 }

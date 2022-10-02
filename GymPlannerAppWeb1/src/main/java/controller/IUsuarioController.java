@@ -21,4 +21,5 @@ public interface IUsuarioController {
     public String terminarRutina(String username, Map<Integer, Integer> nivel);
 
     public String eliminar(String username);
+   
 }   

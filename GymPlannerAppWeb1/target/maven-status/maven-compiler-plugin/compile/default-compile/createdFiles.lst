@@ -8,6 +8,7 @@ beans\Historial.class
 controller\HistorialController.class
 beans\Rutinas.class
 beans\Usuario.class
+servlets\ServletRutinaSeleccionar.class
 controller\UsuarioController.class
 servlets\ServletHistorialListar.class
 servlets\ServletUsuarioModificar.class

@@ -101,5 +101,32 @@ public class RutinaController implements IRutinaController {
         return "false";
 
     }
+    
+     @Override
+    public String seleccionar(int id_rutina, String username) {
+
+        Timestamp dia = new Timestamp(new Date().getTime());
+        DBConnection con = new DBConnection();
+        String sql = "Insert into historial values ('" + id_rutina + "', '" + username + "', '" + dia + "')";
+
+        try {
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql);
+            /*
+            String modificar = modificar(id_rutina);
+
+            if (modificar.equals("true")) {
+                return "true";
+            }
+            */
+            return "true";
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        } finally {
+            con.desconectar();
+        }
+        return "false";
+    }
+
 
 }
